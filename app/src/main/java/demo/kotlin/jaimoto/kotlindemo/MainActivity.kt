@@ -23,9 +23,15 @@ class MainActivity : AppCompatActivity() {
         decideButton.setOnClickListener {
             println("click en buton")
             var random = Random()
-            val randomFood = Random().nextInt(foodList.count())
+            val randomFood = random.nextInt(foodList.count())
             selectedFoodTxt.text = foodList.elementAt(randomFood)
         }
+
+        addFoodBtn.setOnClickListener{
+            foodList.add(textDecide.text.toString())
+            textDecide.text.clear()
+        }
+
 
 
     }
